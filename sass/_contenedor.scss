@@ -1,0 +1,57 @@
+.contenedor{
+    width: 100%;
+    @import 'encabezado';
+    @import 'inicio';
+
+    .contacto {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-template-rows: 1fr;
+
+        div {
+            padding: 1em 5em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h3 {
+                text-align: center;
+            }
+            p {
+                line-height: 2em;
+            }
+
+            & > * + * {
+                text-align: center;
+                margin-top: 1em;
+            }
+            ul {
+                list-style: none;
+                & > li + li {
+                    margin-top: 1em;
+                }
+                li {
+                    a {
+                        color: rgba(#000000, 0.5);
+                        font-weight: bold;
+                        &:hover{
+                            color:#495cba;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2em 1em;
+        background-color: #f9f9f9;
+        color: #575757;
+    }
+}
