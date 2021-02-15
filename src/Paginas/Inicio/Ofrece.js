@@ -1,47 +1,23 @@
-import React from 'react';
-
+import React from "react";
+import { useOfrece } from "../../Hooks/Index";
 function Ofrece() {
-    return (
-        <div className="ofrece">
-            <div className="titulo">
-                <h3>Nilsa Manualidades Ofrece:</h3>
+  const [datos] = useOfrece();
+  return (
+    <section className="ofrece">
+      <div className="titulo">
+        <h3>Nilsa Manualidades Ofrece:</h3>
+      </div>
+      <div className="descripcion">
+        {datos.map((elemento) => {
+          return (
+            <div>
+              {elemento.porcentaje} {elemento.titulo} {elemento.parrafo}
             </div>
-            <div className="descripcion">
-                <div>
-
-                    <h2>100%</h2>
-                    <h3>creatividad</h3>
-                    <p>
-                        La <strong>Creatividad</strong> es una de las capacidades humanas más valiosas, nos permite
-                   expresarnos, <strong>Soñar</strong> y <strong>Transformar</strong> la <strong>Realidad</strong>
-                    </p>
-
-                </div>
-
-                <div>
-
-                    <h2>100%</h2>
-                    <h3>creatividad</h3>
-                    <p>
-                        La <strong>Creatividad</strong> es una de las capacidades humanas más valiosas, nos permite
-                        expresarnos, <strong>Soñar</strong> y <strong>Transformar</strong> la <strong>Realidad</strong>
-                    </p>
-
-                </div>
-                <div>
-
-                    <h2>100%</h2>
-                    <h3>creatividad</h3>
-                    <p>
-                        La <strong>Creatividad</strong> es una de las capacidades humanas más valiosas, nos permite
-                        expresarnos, <strong>Soñar</strong> y <strong>Transformar</strong> la <strong>Realidad</strong>
-                    </p>
-
-                </div>
-
-            </div>
-        </div>
-    );
+          );
+        })}
+      </div>
+    </section>
+  );
 }
 
-export { Ofrece }
+export { Ofrece };

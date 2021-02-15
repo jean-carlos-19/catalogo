@@ -1,0 +1,26 @@
+.quienes-somos {
+  width: 100%;
+
+  .historia {
+    & > div + div {
+      margin-top: 1.5rem;
+    }
+    p {
+      text-align: center;
+    }
+    .relato {
+      .parrafos {
+        @include displey-grid(200px);
+        @media screen and (min-width: 40em) {
+          @include displey-grid(400px);
+        }
+      }
+    }
+    .publicidad {
+      @include display-fle(column, flex-start, center);
+      p {
+        text-align: center;
+      }
+    }
+  }
+}

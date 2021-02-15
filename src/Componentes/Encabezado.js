@@ -1,28 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { useEncabezado } from '../hooks/EncabezadoHooks'
-import { Logo } from "./Logo";
-import { Lista } from "./Lista";
-import { Rutas } from "./Rutas";
-import { Contacto } from './Contacto';
-import { Footer } from './Footer';
-
-function Encabezado() {
-
-  const [PaginaActual, paginas, cambiaPagina, subMenu] = useEncabezado();
+import { Logo, Lista } from "./Index";
+import { useEncabezado } from "../Hooks/Index";
+function Encabezado({
+  paginas = [],
+  PaginaActual = {},
+  cambiaPagina = (f) => f,
+}) {
+  const [nuevaclase, apareceMenu] = useEncabezado(true);
 
   return (
-    <Router>
-      <div className="contenedor">
-        <div className="encabezado">
-          <Logo />
-          <Lista paginas={paginas} PaginaActual={PaginaActual} cambiaPagina={cambiaPagina} subMenu={subMenu} />
-        </div>
-        <Rutas />
-        <Contacto />
-        <Footer />
-      </div>
-    </Router>
+    <header className="encabezado">
+      <Logo apareceMenu={apareceMenu} />
+      <Lista
+        nuevaclase={nuevaclase}
+        paginas={paginas}
+        PaginaActual={PaginaActual}
+        cambiaPagina={cambiaPagina}
+      />
+    </header>
   );
 }
 

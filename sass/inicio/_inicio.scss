@@ -1,0 +1,115 @@
+.inicio {
+  width: 100%;
+  height: auto;
+  .imagen-fondo {
+    width: 100%;
+  }
+  .encontraras {
+    width: 100%;
+    padding: 5rem 1em;
+    & > div + div {
+      margin-top: 5rem;
+    }
+    .puntos {
+      span {
+        svg {
+          color: var(--color-encabezado);
+        }
+      }
+    }
+
+    div {
+      height: 33.33%;
+      @include display-fle(column, center, center);
+      & > * + * {
+        margin-top: 1rem;
+      }
+      svg {
+        font-size: 3rem;
+      }
+    }
+  }
+  .productos-destacados {
+    width: 100%;
+    height: auto;
+
+    .img-productos {
+      @include displey-grid(200px);
+
+      img {
+        cursor: pointer;
+      }
+    }
+    .mas-productos {
+      padding: 0.5em 1em;
+      @include display-fle(row, center, center);
+      input[type="button"] {
+        padding: 0.5em 1.5em;
+        border-radius: 2rem;
+        background-color: var(--color-encabezado, purple);
+        color: white;
+      }
+    }
+    @media screen and(min-width:64em) {
+      .img-productos {
+        @include displey-grid(25%);
+      }
+    }
+  }
+  .ofrece {
+    padding: 0.5em 1em;
+    .descripcion {
+      @include displey-grid(200px);
+      grid-gap: 0;
+      div {
+        padding: 0.5em 0;
+        @include display-fle(column, space-around, center);
+        h2 {
+          font-size: 2.5rem;
+        }
+        h3 {
+          font-size: 1.5rem;
+        }
+        & > * + * {
+          margin-top: 2rem;
+        }
+      }
+    }
+    @media screen and(min-width:64em) {
+      .descripcion {
+        @include displey-grid(33%);
+        grid-gap: 0;
+      }
+    }
+  }
+  .testimonio {
+    .imagenes {
+      @include displey-grid(200px);
+      .persona {
+        @include display-fle(column, flex-start, center);
+        & > * + * {
+          margin-top: 1rem;
+        }
+        img {
+          max-width: 80%;
+          border-radius: 50%;
+        }
+      }
+    }
+    @media screen and(min-width:64em) {
+      .imagenes {
+        @include displey-grid(33%);
+        grid-gap: 0;
+      }
+    }
+  }
+}
+
+//
+.titulo {
+  padding: 0.5em 1em;
+  text-align: center;
+  h3 {
+    font-size: 1.5rem;
+  }
+}

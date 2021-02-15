@@ -1,0 +1,13 @@
+@mixin display-fle($direccion, $principal, $secundario) {
+  display: flex;
+  flex-direction: $direccion;
+  justify-content: $principal;
+  align-items: $secundario;
+}
+@mixin displey-grid($minimo) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($minimo, 1fr));
+  grid-template-rows: 1fr;
+  grid-gap: 1em;
+  align-items: center;
+}

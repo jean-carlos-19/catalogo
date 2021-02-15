@@ -1,0 +1,43 @@
+.contactanos {
+  width: 100%;
+
+  & > div + div {
+    margin-top: 5rem;
+  }
+
+  .ubicacion {
+    @include displey-grid(200px);
+
+    & > div {
+      @include display-fle(column, center, center);
+    }
+  }
+  .encuentranos {
+    width: 100%;
+    .formulario {
+      @include display-fle(row, space-around, center);
+      form {
+        width: inherit;
+        p {
+          @include display-fle(row, center, center);
+          textarea {
+            height: 15vmax;
+          }
+        }
+      }
+
+      figure {
+        display: none;
+        @media screen and(min-width:40em) {
+          display: block;
+        }
+      }
+    }
+  }
+  @media screen and(min-width:64em) {
+    .ubicacion {
+      @include displey-grid(33%);
+      grid-gap: 0;
+    }
+  }
+}

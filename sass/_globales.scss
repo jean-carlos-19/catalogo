@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Laila:wght@300&display=swap");
+:root {
+  box-sizing: border-box;
+  font-family: "Laila", sans-serif;
+  font-size: calc(1vw + 0.6em);
+  border: none;
+  outline: none;
+  --color-encabezado: #546de5;
+  --color-menu-desplegable: #546ce5c2;
+  @media (min-width: 64em) {
+    & {
+      font-size: calc(1vmin + 0.4em);
+    }
+  }
+}
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  border: inherit;
+  outline: inherit;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+svg {
+  color: white;
+  font-size: 1.5rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+p {
+  line-height: 2rem;
+  padding: 0.5em 1em;
+}
+
+button {
+  padding: 0.8rem 1.75rem;
+  border-radius: 2rem;
+  background-color: var(--color-encabezado, purple);
+  color: white;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+figure {
+  @include display-fle(row, center, center);
+}
+@media (min-width: 64em) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.25rem;
+  }
+}

@@ -1,63 +1,59 @@
-import React, { useCallback, useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { logo } from '../procesos/Peticion';
-
-function Contacto() {
-
-    const [imagenes, setImagenes] = useState([]);
-    const [cargando, setCargando] = useState(false);
-
-    const cargaImagnes = useCallback(async () => {
-        setCargando(true);
-        const Imagenes = await logo();
-        setImagenes(Imagenes);
-        setCargando(false);
-    }, []);
-
-    useEffect(() => {
-        if (imagenes.length === 0) cargaImagnes();
-    }, [imagenes]);
-
-
-    return (
-        <div className="contacto">
-            <div>
-                <h3>Nuestro objetivo Principal es brindarte un servicio de Calidad.</h3>
-                <p>Nos enfocamos en ser un aporte de valor con nuestros productos y brindarte asesoramiento .</p>
-            </div>
-            <div>
-                {
-                    (cargando) ? (<div><p>Cargando...</p></div>) : (
-
-                        imagenes.map((elemento) => {
-                            return (
-                                < img src={`http://localhost:3000/logo/${elemento}`} alt="" />
-                            )
-                        })
-                    )
-                }
-
-                <h3>Nilsa Manualidades Escolares</h3>
-            </div>
-            <div>
-                <h3>Accesos Rapidos</h3>
-                <ul>
-                    <li>
-                        <Link to={"/"} children="inicio" />
-                    </li>
-                    <li>
-                        <Link to={"/productos"} children="productos" />
-                    </li>
-                    <li>
-                        <Link to={"/quienes-somos"} children="quienes somos" />
-                    </li>
-                    <li>
-                        <Link to={"/contactanos"} children="contáctanos" />
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-    );
+function Contacto({
+  paginas = [],
+  PaginaActual = {},
+  cambiaPagina = (f) => f,
+}) {
+  return (
+    <section className="contacto">
+      <div>
+        <h3>Nuestro objetivo Principal es brindarte un servicio de Calidad.</h3>
+        <p>
+          Nos enfocamos en ser un aporte de valor con nuestros productos y
+          brindarte asesoramiento .
+        </p>
+      </div>
+      <div>
+        <figure>
+          <img src="http://localhost:3000/img/logo-footer.png" alt="" />
+        </figure>
+        <h3>Nilsa Manualidades Escolares</h3>
+      </div>
+      <div>
+        <h3>Accesos Rapidos</h3>
+        <ul>
+          {paginas.map((elemento) => {
+            if (elemento.pagina === PaginaActual.pagina) {
+              return (
+                <li>
+                  <Link
+                    className={PaginaActual.classPagina}
+                    to={elemento.url}
+                    children={elemento.pagina}
+                    onClick={() => {
+                      cambiaPagina(elemento.pagina);
+                    }}
+                  />
+                </li>
+              );
+            } else {
+              return (
+                <li>
+                  <Link
+                    to={elemento.url}
+                    children={elemento.pagina}
+                    onClick={() => {
+                      cambiaPagina(elemento.pagina);
+                    }}
+                  />
+                </li>
+              );
+            }
+          })}
+        </ul>
+      </div>
+    </section>
+  );
 }
 export { Contacto };

@@ -1,21 +1,16 @@
 import React from "react";
-import { Encontraras } from './Encontraras';
-import { ProductosDestacados } from './ProductosDestacados';
-import { Ofrece } from './Ofrece';
-import { Testimonio } from './Testimonio';
-
+import { Encontraras, ProductosDestacados, Ofrece, Testimonio } from "./Index";
 function Inicio() {
   return (
-    <div className="inicio">
-
-      <div className="imagen-fondo"></div>
+    <section className="inicio">
+      <figure className="imagen-fondo">
+        <img src="http://localhost:3000/img/fondo.jpg" alt="" />
+      </figure>
       <Encontraras />
       <ProductosDestacados />
       <Ofrece />
       <Testimonio />
-
-
-    </div>
+    </section>
   );
 }
 

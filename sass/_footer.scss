@@ -1,0 +1,33 @@
+.contacto {
+  margin-top: 1.5rem;
+  @include displey-grid(200px);
+  & > div + div {
+    margin-top: 1.5rem;
+  }
+  div {
+    @include display-fle(column, center, center);
+    ul {
+      align-self: flex-start;
+      a {
+        display: block;
+        padding: 0.5em 1em;
+      }
+      .foco {
+        color: var(--color-encabezado);
+      }
+    }
+  }
+  @media screen and (min-width: 40em) {
+    @include displey-grid(33%);
+    grid-gap: 0;
+  }
+}
+.footer {
+  @include display-fle(row, center, center);
+  background-color: #353b48;
+  p {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+  }
+}
