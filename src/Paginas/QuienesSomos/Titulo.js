@@ -1,14 +1,13 @@
 import React from "react";
-
+import logo_footer from "../../img/logo-footer.png";
+import { Imagen } from "../Index";
 function Titulo() {
   return (
     <div className="titulo">
       <div>
         <h1>nilsa manualidades</h1>
       </div>
-      <div>
-        <img src="http://localhost:3000/img/logo-footer.png" alt="" />
-      </div>
+      <Imagen url={logo_footer} />
     </div>
   );
 }

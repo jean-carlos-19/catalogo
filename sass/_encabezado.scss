@@ -2,6 +2,7 @@
   width: inherit;
   background-color: var(--color-encabezado, purple);
   position: sticky;
+  z-index: 2;
   top: 0;
   .logo {
     width: inherit;
@@ -10,9 +11,16 @@
     .nombre.logo {
       width: 70%;
     }
+    img {
+      box-shadow: none;
+    }
     .icono,
     .menu {
       width: 15%;
+
+      svg {
+        color: white;
+      }
     }
     a {
       color: white;
@@ -32,7 +40,7 @@
     position: absolute;
     z-index: 2;
     background-color: transparent;
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
     transition-property: transform;
     transition-duration: 2s;
 
@@ -43,6 +51,9 @@
       background-color: white;
       padding: 0.5em 1em;
       border-bottom: 2px solid var(--color-encabezado);
+      &:hover {
+        color: var(--color-encabezado);
+      }
     }
     .foco {
       color: var(--color-encabezado);

@@ -1,7 +1,7 @@
 import React from "react";
-import { Contenedor } from "./Contenedor";
+import { Rutas } from "../Componentes/Index";
 
 function App() {
-  return <Contenedor />;
+  return <Rutas />;
 }
 export default App;

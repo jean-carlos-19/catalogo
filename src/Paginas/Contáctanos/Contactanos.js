@@ -1,13 +1,12 @@
 import React from "react";
 import { Ubicacion } from "./Ubicacion";
 import { Encuentranos } from "./Encuentranos";
-
+import { Imagen } from "../Index";
+import contacto from "../../img/contacto.jpg";
 function Contactanos() {
   return (
     <div className="contactanos">
-      <div className="imagen-fondo-contatanos">
-        <img src="http://localhost:3000/img/contacto.jpg" alt="" />
-      </div>
+      <Imagen url={contacto} cssClass="imagen-fondo-contatanos" />
       <Ubicacion />
       <Encuentranos />
     </div>

@@ -5,5 +5,7 @@ import { Encabezado } from "./Encabezado";
 import { Logo } from "./Logo";
 import { Lista } from "./Lista";
 import { Item } from "./Item";
-
-export { Rutas, Contacto, Footer, Encabezado, Logo, Lista, Item };
+import { Informacion } from "./Informacion";
+import { Imagen } from "./Imagen";
+import { AccesoRapido } from "./AccesoRapido";
+export { Rutas, Contacto, Footer, Encabezado, Logo, Lista, Item, Informacion, Imagen, AccesoRapido };

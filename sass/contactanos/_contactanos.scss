@@ -1,7 +1,7 @@
 .contactanos {
   width: 100%;
 
-  & > div + div {
+  & > * + * {
     margin-top: 5rem;
   }
 
@@ -28,6 +28,9 @@
 
       figure {
         display: none;
+        img {
+          box-shadow: none;
+        }
         @media screen and(min-width:40em) {
           display: block;
         }

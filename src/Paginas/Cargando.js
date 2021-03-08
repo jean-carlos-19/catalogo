@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 function Cargando() {
-    return (
-        <div className="cargando">
-            <p>Cargando...</p>
-        </div>
-    );
+  return (
+    <div className="cargando">
+      <p>Cargando...</p>
+    </div>
+  );
 }
-export { Cargando }
+export { Cargando };

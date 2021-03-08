@@ -1,9 +1,11 @@
 import React from "react";
-import { Portada, Historia } from "./Index";
+import { Historia } from "./Index";
+import { Imagen } from "../Index";
+import quienessomos from "../../img/quienes-somos.jpg";
 function QuienesSomos() {
   return (
     <div className="quienes-somos">
-      <Portada />
+      <Imagen url={quienessomos} />
       <Historia />
     </div>
   );

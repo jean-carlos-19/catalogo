@@ -36,7 +36,7 @@ a {
   cursor: pointer;
 }
 svg {
-  color: white;
+  color: rgba(0, 0, 0, 0.8);
   font-size: 1.5rem;
 }
 h1,
@@ -44,7 +44,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+figcaption {
   text-align: center;
   text-transform: capitalize;
   font-weight: bold;
@@ -52,6 +53,7 @@ h6 {
 img {
   max-width: 100%;
   object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 p {
   line-height: 2rem;
@@ -67,6 +69,7 @@ button {
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
+  cursor: pointer;
 }
 input[type="text"],
 input[type="email"],
@@ -77,6 +80,11 @@ textarea {
 }
 figure {
   @include display-fle(row, center, center);
+}
+.titulo {
+  h3 {
+    font-size: 3rem;
+  }
 }
 @media (min-width: 64em) {
   h1,
@@ -89,5 +97,10 @@ figure {
   }
   p {
     font-size: 1.25rem;
+  }
+  .titulo {
+    h3 {
+      font-size: 2rem;
+    }
   }
 }

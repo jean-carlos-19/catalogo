@@ -8,7 +8,7 @@ function useLista(nuevaclase = "") {
       establecerClassCss("lista");
       return;
     }
-    const nuevo = classCss + " " + "activado";
+    const nuevo = `${classCss} activado`;
     establecerClassCss(nuevo);
   }, [nuevaclase]);
   return [classCss];

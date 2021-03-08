@@ -7,9 +7,9 @@ function Relato() {
     <div className="relato">
       <h3>nuestra empresa fue creada en el año 19993</h3>
       <div className="parrafos">
-        {parrafos.map((elemento) => {
-          return <div>{elemento.parrafo}</div>;
-        })}
+        {parrafos.map((elemento, indice) => (
+          <div key={indice}>{elemento.parrafo}</div>
+        ))}
       </div>
     </div>
   );

@@ -1,10 +1,7 @@
 import { useState } from "react";
+import cliente from "../img/cliente.png";
 function useTestimonio() {
-  const [imagenes] = useState([
-    `http://localhost:3000/img/cliente.png`,
-    `http://localhost:3000/img/cliente.png`,
-    `http://localhost:3000/img/cliente.png`,
-  ]);
+  const [imagenes] = useState([cliente, cliente, cliente]);
   return [imagenes];
 }
 export { useTestimonio };

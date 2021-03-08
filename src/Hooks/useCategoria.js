@@ -10,7 +10,7 @@ function useCategoria() {
     "plumavit",
     "quimica-laboratorio",
     "titeres",
-    "varios",
+    "varios"
   ];
   const [categoria, setCategoria] = useState();
 

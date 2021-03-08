@@ -1,28 +1,27 @@
 import React from "react";
-
+import { useForm } from "react-hook-form";
+import { validacion } from "./Validacion";
 function Formulario() {
-  const formulario = (e) => {
-    e.preventDefault();
+  const { register, handleSubmit } = useForm();
+  const { nombre, correo, detalle } = validacion;
+  const formulario = (data, e) => {
+    console.log(data);
+    e.target.reset();
   };
+
   return (
-    <form onSubmit={formulario}>
+    <form onSubmit={handleSubmit(formulario)} id="formulario">
       <p>
-        <input type="text" name="" id="" placeholder="nombre" />
+        <input type="text" name="nombre" id="nombre" placeholder="nombre" ref={register(nombre)} />
       </p>
       <p>
-        <input type="email" name="" id="" placeholder="correo" />
+        <input type="email" name="correo" id="correo" placeholder="correo" ref={register(correo)} />
       </p>
       <p>
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="mensaje..."
-        ></textarea>
+        <textarea name="datelle" id="detalle" cols="30" rows="10" placeholder="mensaje..." ref={register(detalle)}></textarea>
       </p>
       <p>
-        <button>enviar</button>
+        <input type="submit" value="enviar" />
       </p>
     </form>
   );

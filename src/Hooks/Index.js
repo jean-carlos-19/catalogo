@@ -6,6 +6,10 @@ import { useLista } from "./useLista";
 import { useTestimonio } from "./useTestimonio";
 import { useOfrece } from "./useOfrece";
 import { useQuienesSomos } from "./useQuienesSomos";
+import { useEncontraras } from "./useEncontraras";
+import { useRecomendacion } from "./useRecomendacion";
+import { useProducto } from "./useProducto";
+import { useNavegacion } from "./useNavegacion";
 export {
   useCategoria,
   useContenedor,
@@ -15,4 +19,8 @@ export {
   useTestimonio,
   useOfrece,
   useQuienesSomos,
+  useEncontraras,
+  useRecomendacion,
+  useProducto,
+  useNavegacion
 };

@@ -9,8 +9,7 @@
 # production
 /build
 
-#arquitectura del proyecto
-/.estructura-proyecto
+
 
 #cataloo
 /catalogo

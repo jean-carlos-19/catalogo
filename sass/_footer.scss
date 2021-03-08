@@ -4,18 +4,28 @@
   & > div + div {
     margin-top: 1.5rem;
   }
-  div {
+  div,
+  figure {
     @include display-fle(column, center, center);
+  }
+  div {
     ul {
       align-self: flex-start;
       a {
         display: block;
         padding: 0.5em 1em;
+        &:hover {
+          color: var(--color-encabezado);
+        }
       }
+
       .foco {
         color: var(--color-encabezado);
       }
     }
+  }
+  img {
+    box-shadow: none;
   }
   @media screen and (min-width: 40em) {
     @include displey-grid(33%);
@@ -23,6 +33,7 @@
   }
 }
 .footer {
+  margin-top: 1.5rem;
   @include display-fle(row, center, center);
   background-color: #353b48;
   p {

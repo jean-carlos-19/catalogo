@@ -1,29 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { useContenedor } from "../Hooks/Index";
-import { Rutas, Contacto, Footer, Encabezado } from "../Componentes/Index";
+import { Contacto, Footer, Encabezado } from "../Componentes/Index";
+import PropTypes from "prop-types";
 
-function Contenedor() {
-  const [PaginaActual, paginas, cambiaPagina] = useContenedor();
-
+function Contenedor({ componente, configuraciones = {} }) {
+  const { paginas, PaginaActual, cambiaPagina } = configuraciones;
   return (
-    <Router>
-      <article className="contenedor">
-        <Encabezado
-          paginas={paginas}
-          PaginaActual={PaginaActual}
-          cambiaPagina={cambiaPagina}
-        />
-        <Rutas />
-        <Contacto
-          paginas={paginas}
-          cambiaPagina={cambiaPagina}
-          PaginaActual={PaginaActual}
-        />
-        <Footer />
-      </article>
-    </Router>
+    <article className="contenedor">
+      <Encabezado paginas={paginas} PaginaActual={PaginaActual} cambiaPagina={cambiaPagina} />
+      {componente}
+      <Contacto paginas={paginas} cambiaPagina={cambiaPagina} PaginaActual={PaginaActual} />
+      <Footer />
+    </article>
   );
 }
-
+Contenedor.propTypes = {
+  componente: PropTypes.element.isRequired,
+  configuraciones: PropTypes.exact({
+    paginas: PropTypes.array.isRequired,
+    PaginaActual: PropTypes.object.isRequired,
+    cambiaPagina: PropTypes.func.isRequired
+  }).isRequired
+};
 export { Contenedor };

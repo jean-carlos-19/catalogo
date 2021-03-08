@@ -1,18 +1,12 @@
 import React from "react";
-import { Logo } from "../Logo";
-
+import { Titulo, Imagenes } from "../Index";
+import { CategoriaProductos } from "./Index";
 function ProductosDestacados() {
   return (
     <section className="productos-destacados">
-      <div className="titulo">
-        <h3>productos destacados</h3>
-      </div>
-      <div className="img-productos">
-        <Logo />
-      </div>
-      <div className="mas-productos">
-        <button>màs productos</button>
-      </div>
+      <Titulo nombre="productos destacados" />
+      <Imagenes />
+      <CategoriaProductos />
     </section>
   );
 }
